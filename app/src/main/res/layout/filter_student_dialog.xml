@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lọc sinh viên theo"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/btn_FilterByUniversity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Đại học"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_FilterByColleges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cao Đẳng"
+        android:textAllCaps="false"/>
+</LinearLayout>
