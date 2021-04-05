@@ -29,7 +29,7 @@ class SortStudentDialog(var studentList:ArrayList<Student>): DialogFragment() {
         }
 
         view.btn_SortByYear.setOnClickListener {
-            studentList.sortWith(compareBy { it.yearBirth })
+            studentList.sortWith(compareBy ({ it.yearBirth},{it.name}))
             listener.sortStudent(studentList)
             dismiss()
         }
