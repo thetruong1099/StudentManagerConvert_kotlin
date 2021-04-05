@@ -146,8 +146,8 @@ class MainActivity : AppCompatActivity(), AddStudentDialog.AddStudentDialogListe
 
     private fun showRemoveDialog() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Sửa Thông Tin")
-        builder.setMessage("Bạn có chắc chắn muốn sửa không")
+        builder.setTitle("Xóa Thông Tin Sinh Viên")
+        builder.setMessage("Bạn có chắc chắn muốn xóa không")
         builder.setPositiveButton("Yes") { dialogInterface, which ->
             val studentListRemove = listStudentAdapter.getStudentList()
 //            Log.d("ShowStudent", "studentListRemove: " + studentListRemove.toString())
