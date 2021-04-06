@@ -8,10 +8,10 @@ import com.example.studentmanagerkotlin2.R
 import com.example.studentmanagerkotlin2.model.Student
 import kotlinx.android.synthetic.main.item_student_simplify.view.*
 
-class RecyclerListStudentAdapterSimplify( var arrayList: ArrayList<Student>):
+class RecyclerListStudentAdapterSimplify(var arrayList: ArrayList<Student>) :
     RecyclerView.Adapter<RecyclerListStudentAdapterSimplify.ViewHolder>() {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName = itemView.tv_Name_Simplify
         var tvYearBirth = itemView.tv_YearBirth_Simplify
         var tvNumberPhone = itemView.tv_NumberPhone_Simplify
@@ -21,7 +21,8 @@ class RecyclerListStudentAdapterSimplify( var arrayList: ArrayList<Student>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_student_simplify, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_student_simplify, parent, false)
         return ViewHolder(itemView)
     }
 

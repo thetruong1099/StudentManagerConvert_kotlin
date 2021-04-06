@@ -10,7 +10,7 @@ import com.example.studentmanagerkotlin2.R
 import com.example.studentmanagerkotlin2.model.Student
 import kotlinx.android.synthetic.main.sort_student_dialog.view.*
 
-class SortStudentDialog(var studentList:ArrayList<Student>): DialogFragment() {
+class SortStudentDialog(var studentList: ArrayList<Student>) : DialogFragment() {
     private lateinit var listener: SortStudentListener
 
     override fun onCreateView(
@@ -19,7 +19,7 @@ class SortStudentDialog(var studentList:ArrayList<Student>): DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
 //        Log.d("ShowStudent", "sort1: "+studentList.toString())
-        val view:View = inflater.inflate(R.layout.sort_student_dialog,container)
+        val view: View = inflater.inflate(R.layout.sort_student_dialog, container)
 
         view.btn_SortByName.setOnClickListener {
             studentList.sortWith(compareBy { it.name })
@@ -29,7 +29,7 @@ class SortStudentDialog(var studentList:ArrayList<Student>): DialogFragment() {
         }
 
         view.btn_SortByYear.setOnClickListener {
-            studentList.sortWith(compareBy ({ it.yearBirth},{it.name}))
+            studentList.sortWith(compareBy({ it.yearBirth }, { it.name }))
             listener.sortStudent(studentList)
             dismiss()
         }
@@ -47,12 +47,12 @@ class SortStudentDialog(var studentList:ArrayList<Student>): DialogFragment() {
         super.onAttach(context)
         try {
             listener = context as SortStudentListener
-        }catch (e: ClassCastException) {
+        } catch (e: ClassCastException) {
             throw ClassCastException(context.toString() + "must implement SortStudentDialogListener")
         }
     }
 
-    interface SortStudentListener{
+    interface SortStudentListener {
         fun sortStudent(studentListSort: ArrayList<Student>)
     }
 }

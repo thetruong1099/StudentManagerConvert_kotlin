@@ -2,7 +2,6 @@ package com.example.studentmanagerkotlin2.view
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), AddStudentDialog.AddStudentDialogListener,
     RecyclerListStudentAdapter.OnItemClickListenter, EditStudentDialog.EditStudentListener,
-    SortStudentDialog.SortStudentListener, FilterStudentDialog.FilterStudentDialogListener, SearchStudentDialog.SearchStudentDialogListener {
+    SortStudentDialog.SortStudentListener, FilterStudentDialog.FilterStudentDialogListener,
+    SearchStudentDialog.SearchStudentDialogListener {
     private var listStudent: ArrayList<Student> = ArrayList()
     private var listStudentAdapter = RecyclerListStudentAdapter(listStudent, this)
 
@@ -193,7 +193,7 @@ class MainActivity : AppCompatActivity(), AddStudentDialog.AddStudentDialogListe
     private fun setEventButtonFilter() {
         fab_Filter.setOnClickListener {
             val filterStudentDialog = FilterStudentDialog(listStudent)
-            filterStudentDialog.show(supportFragmentManager,"Custom filter dialog")
+            filterStudentDialog.show(supportFragmentManager, "Custom filter dialog")
         }
     }
 
