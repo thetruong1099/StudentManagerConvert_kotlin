@@ -97,12 +97,8 @@ class MainActivity : AppCompatActivity(), AddStudentDialog.AddStudentDialogListe
         if (listStudent.size == 0) listStudent.add(student)
         else {
             var statusCheckPhone = true
-            for (i in listStudent) {
-                if (student.numberPhone.equals(i.numberPhone)) {
-                    statusCheckPhone = false
-                    break
-                }
-            }
+            var studentFinded: Student? = listStudent.find { it.numberPhone == student.numberPhone }
+            studentFinded?.let { statusCheckPhone = false }
             if (statusCheckPhone) listStudent.add(student)
             else Toast.makeText(this, "SDT bị trùng", Toast.LENGTH_SHORT).show()
         }
